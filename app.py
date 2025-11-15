@@ -83,7 +83,7 @@ try:
         raise RuntimeError('No supported DB pool implementation is installed')
 
     # Use a connection string for psycopg3 or a DSN for psycopg2
-    conninfo = f"postgresql://{os.getenv('POSTGRES_USER')}:{os.getenv('POSTGRES_PASSWORD')}@{os.getenv('DB_HOST', os.getenv('PGHOST', 'localhost'))}:{os.getenv('DB_PORT', os.getenv('PGPORT', 5432))}/{os.getenv('POSTGRES_DB')}">
+    conninfo = f"postgresql://{os.getenv('POSTGRES_USER')}:{os.getenv('POSTGRES_PASSWORD')}@{os.getenv('DB_HOST', os.getenv('PGHOST', 'localhost'))}:{os.getenv('DB_PORT', os.getenv('PGPORT', 5432))}/{os.getenv('POSTGRES_DB')}"
     db_pool = make_pool(conninfo, min_size=1, max_size=10)
 
     # Test connection on startup
